@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Avançado de Controle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Gestão de Pedidos</div>
+        <div class="nav-links">
+            <a href="pedidos.html">Novo Pedido</a>
+            <a href="relatorios.html">Painel & Relatórios</a>
+            <a href="index.html" style="color: #dc3545;">Sair</a>
+        </div>
+    </nav>
+    
+    <div class="container relatorios-container">
+        <h2>Painel de Controle & Analytics</h2>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Total Registrado</h3>
+                <p id="dashTotal">-</p>
+            </div>
+            
+            <div class="card">
+                <h3>Envios Desse Mês</h3>
+                <p id="dashMes">-</p>
+            </div>
+            
+            <div class="card">
+                <h3>Maior Demanda</h3>
+                <p id="dashDemanda">-</p>
+            </div>
+        </div>
+
+        <div class="charts-grid-visual">
+            <div class="chart-card">
+                <canvas id="chartProdutos"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="chartSetores"></canvas>
+            </div>
+        </div>
+
+        <div class="filtros">
+            <input type="date" id="filtroData" title="Filtrar por Dia Exato">
+            
+            <input type="month" id="filtroMes" title="Filtrar por Mês">
+            
+            <select id="filtroProduto">
+                <option value="">Todos os Produtos</option>
+                <option value="agua">Água</option>
+                <option value="gás">Gás</option>
+                <option value="Caminhão pipa">Caminhão Pipa</option>
+            </select>
+            
+            <button id="btnPreview" type="button">Gerar Preview</button>
+            <button id="btnExportar" type="button" class="btn-excel">Exportar Excel</button>
+        </div>
+        
+        <div class="table-responsive">
+            <table id="tabelaPreview">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Telefone</th>
+                        <th>Produto</th>
+                        <th>Qtd</th>
+                        <th>Setor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align: center; color: #888;">Os dados acima refletem o filtro selecionado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

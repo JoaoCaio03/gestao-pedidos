@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Pedido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Gestão de Pedidos</div>
+        <div class="nav-links">
+            <a href="pedidos.html">Novo Pedido</a>
+            <a href="relatorios.html">Painel & Relatórios</a>
+            <a href="index.html" style="color: #dc3545;">Sair</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Registrar Pedido</h2>
+        <form id="formPedido">
+            <div class="form-group">
+                <label for="telefone">Telefone (WhatsApp)</label>
+                <input type="text" id="telefone" placeholder="Ex: 81999999999" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <select id="produto" required>
+                    <option value="" disabled selected>Selecione o produto</option>
+                    <option value="agua">Água</option>
+                    <option value="gás">Gás</option>
+                    <option value="Caminhão pipa">Caminhão Pipa</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="setor">Setor Destino</label>
+                <select id="setor" required>
+                    <option value="" disabled selected>Selecione uma localidade</option>
+                    <option value="CRAS Antonio Matias">CRAS Antonio Matias</option>
+                    <option value="CRAS Santo Affonso">CRAS Santo Affonso</option>
+                    <option value="CREAS">CREAS</option>
+                    <option value="Serviço de Convivencia">Serviço de Convivencia</option>
+                    <option value="Cozinha Comunitária">Cozinha Comunitária</option>
+                    <option value="Lar do anjos">Lar do anjos</option>
+                    <option value="Sede do bolsa família">Sede do bolsa família</option>
+                    <option value="Secretaria da Assistencia Social">Secretaria da Assistencia Social</option>
+                </select>
+            </div>
+            
+            <button type="submit">Salvar e Enviar WhatsApp</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
